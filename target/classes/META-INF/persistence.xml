@@ -5,11 +5,15 @@
              version="1.0">
     <persistence-unit name="doncottonDB">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>ru.dm.crm.entity.UserRolesEntity</class>
+        <class>ru.dm.crm.entity.UsersEntity</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update" />
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/doncotton-crm"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
         </properties>
     </persistence-unit>
 </persistence>
