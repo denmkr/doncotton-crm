@@ -6,29 +6,30 @@ import javax.persistence.*;
  * Created by denis on 31/03/2018.
  */
 @Entity
-@Table(name = "user_roles", schema = "public", catalog = "doncotton-crm")
+@Table(name = "user_roles", schema = "public")
 public class UserRole {
-    private int userRoleId;
-    private int userId;
+    private Long userRoleId;
+    private Long userId;
     private String authority;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_role_id")
-    public int getUserRoleId() {
+    public Long getUserRoleId() {
         return userRoleId;
     }
 
-    public void setUserRoleId(int userRoleId) {
+    public void setUserRoleId(Long userRoleId) {
         this.userRoleId = userRoleId;
     }
 
     @Basic
     @Column(name = "user_id")
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -58,8 +59,8 @@ public class UserRole {
 
     @Override
     public int hashCode() {
-        int result = userRoleId;
-        result = 31 * result + userId;
+        int result = userRoleId != null ? userRoleId.hashCode() : 0;
+        result = 31 * result + (userId != null ? userId.hashCode() : 0);
         result = 31 * result + (authority != null ? authority.hashCode() : 0);
         return result;
     }

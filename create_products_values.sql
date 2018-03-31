@@ -42,3 +42,11 @@ CREATE TABLE user_roles
       REFERENCES public.users (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 );
+
+
+CREATE TABLE persistent_logins ( 
+  username varchar(100) not null, 
+  series varchar(64) primary key, 
+  token varchar(64) not null, 
+  last_used timestamp not null
+);

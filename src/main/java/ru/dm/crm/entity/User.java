@@ -7,9 +7,9 @@ import java.sql.Timestamp;
  * Created by denis on 31/03/2018.
  */
 @Entity
-@Table(name = "users", schema = "public", catalog = "doncotton-crm")
+@Table(name = "users", schema = "public")
 public class User {
-    private int id;
+    private Long id;
     private String email;
     private String password;
     private String name;
@@ -19,12 +19,13 @@ public class User {
     private Boolean enabled;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -119,7 +120,7 @@ public class User {
 
     @Override
     public int hashCode() {
-        int result = id;
+        int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
