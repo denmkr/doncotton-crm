@@ -9,7 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-03-31.15:34:28.145</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-03-31.16:15:57.718</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1264466</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -28,5 +29,42 @@
     <schema id="8" parent="2" name="information_schema">
       <ObjectId>12381</ObjectId>
     </schema>
+    <sequence id="9" parent="3" name="products_id_seq">
+      <ObjectId>508938</ObjectId>
+      <StateNumber>1264466</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="10" parent="3" name="products">
+      <ObjectId>508940</ObjectId>
+      <StateNumber>1264466</StateNumber>
+    </table>
+    <column id="11" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1264466</StateNumber>
+      <DefaultExpression>nextval(&apos;products_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="12" parent="10" name="articule">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>1264466</StateNumber>
+    </column>
+    <column id="13" parent="10" name="name">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>1264466</StateNumber>
+    </column>
+    <index id="14" parent="10" name="products_pkey">
+      <ObjectId>508947</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="15" parent="10" name="products_pkey">
+      <ObjectId>508948</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>products_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

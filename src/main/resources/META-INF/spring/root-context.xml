@@ -13,8 +13,11 @@
 
 	<!-- Configures the Spring MVC @Controller programming model -->
 	<annotation-driven />
+
 	<!-- Configures transaction management around @Transactional components -->
 	<tx:annotation-driven />
+
+	<jpa:repositories base-package="ru.dm.crm.repository"/>
 
 	<resources mapping="/resources/**" location="/resources/" />
 
@@ -28,7 +31,12 @@
 		<beans:property name="prefix" value=""/>
 		<beans:property name="suffix" value=".ftl"/>
 	</beans:bean>
-	
-	<context:component-scan base-package="ru.dm" />
+
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- setting maximum upload size -->
+		<beans:property name="maxUploadSize" value="40000000" />
+	</beans:bean>
+
+	<context:component-scan base-package="ru.dm.crm" />
 
 </beans:beans>

@@ -247,10 +247,12 @@
         </exclusion>
       </exclusions>
     </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
     <dependency>
-      <groupId>postgresql</groupId>
+      <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>9.1-901.jdbc4</version>
+      <version>42.2.1</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
@@ -268,5 +270,15 @@
 
   <build>
     <finalName>doncotton-crm</finalName>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.6</source>
+                  <target>1.6</target>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
 </project>
