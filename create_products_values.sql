@@ -43,10 +43,23 @@ CREATE TABLE user_roles
       ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
+/* CREATE persistent_logins table */
 
 CREATE TABLE persistent_logins ( 
   username varchar(100) not null, 
   series varchar(64) primary key, 
   token varchar(64) not null, 
   last_used timestamp not null
+);
+
+/* CREATE clients table */
+
+CREATE SEQUENCE clients_id_seq;
+CREATE TABLE clients ( 
+  id integer NOT NULL DEFAULT nextval('clients_id_seq'),
+  name varchar(100) NOT NULL, 
+  email varchar(64) NOT NULL,
+  phone varchar(64) NOT NULL, 
+  organization text,
+  CONSTRAINT clients_id_pk PRIMARY KEY (id)
 );
