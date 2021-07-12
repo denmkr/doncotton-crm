@@ -1,1 +1,2 @@
-# doncotton-crm
+# Doncotton CRM
+CRM system for warehouse management
